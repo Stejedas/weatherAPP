@@ -7,7 +7,7 @@ function WeatherFetch(){
    
    
      useEffect(() => {
-       fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=e659f9e2b322c20d032f79bdcd034fa4')
+       fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=PASWORD')
          .then(j => j.json())
          .then(data => updatetWeather(data))
      }, [])
