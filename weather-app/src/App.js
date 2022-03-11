@@ -1,7 +1,7 @@
 
 import './App.css';
 import WeatherContexProvider from './components/context/provider.jsx';
-import FoodFetch from './components/food-fetch';
+
 
 import WeatherCard from './components/weatherCard';
 import Header from './components/header';
@@ -14,7 +14,7 @@ function App() {
     <WeatherContexProvider>
       <Header></Header>
     
-      <FoodFetch></FoodFetch>
+      
       <WeatherCard></WeatherCard>
     </WeatherContexProvider>
     
