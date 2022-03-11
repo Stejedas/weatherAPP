@@ -1,13 +1,16 @@
+import { useState } from "react";
 
-function FoodFetch() {
-    let arrayFood = [
+
+
+export let useFood = () => {
+    const [food, updateFood]=useState([
         {
             name: "Thai Curry Chicken Meatballs",
             ingredients: "curry, chicken, olive-oil, tomatoe, speaces, salt",
             description: "Thai Curry Chicken Meatballs With Ground Chicken, Minced Garlic, Fresh Ginger, Green Onions, Salt, Fresh Cracked Black Pepper, Oil, Garlic, Bay Leaf, Curry Powder, Cayenne Pepper, Coconut Milk, Chicken Broth, Fish Sauce, Limes, Fresh Lime Juice, Cilantro",
             img: "https://lh3.googleusercontent.com/qCO4Y5lUo5HiitgeBEiPl_tpuZ6m80TWc6AamTJ6iwE0z756numHmP7lJuqnHE_jBrb63105BNr2g3wW0rdy",
             suggestedWeather: "rain",
-          
+
         },
         {
             name: "Pasta Puttanesca",
@@ -22,18 +25,18 @@ function FoodFetch() {
             description: "Peppery broccoli rabe and spicy red pepper flakes kick up the flavor of this classic dish from Puglia. Learn to sweat garlic, emulsify your sauce, and why your choice of cheese matters.",
             img: "https://lh3.googleusercontent.com/AHySTwcv16pH8MU1o3AXcQ1JhuRevvCetLQyliqX6KJi6VauHqVDkgR5U0xQ9bQlJQxoeY5-Grme4-drl44JsQ",
             suggestedWeather: "sun",
-            
+
         },
         {
-        
+
             name: "Roasted Broccoli Recipes",
-            ingredients:"broccoli",
+            ingredients: "broccoli",
             img: "https://lh3.googleusercontent.com/815aru_GcGE9loiegEoct815oeozU_YnR4GosZFNfy0QARrSpYZ6pvozZf3WN_Ea_67XbUWoguuYLKtZVuN0ALE",
             description: "The Best Roasted Broccoli Recipes on Yummly | Roasted Broccoli, Oven Roasted Broccoli, Garlic Parmesan Roasted Broccoli",
             suggestedWeather: "sun",
-               
-        }, 
-        , {
+
+        },
+         {
             name: "Garlic Parmesan Roasted Broccoli",
             ingredients: "Broccoli, Olive Oil, Salt, Black Pepper, Garlic Cloves, Grated Parmesan Cheese, Breadcrumbs",
             description: "To Simply Inspire is an encouraging website featuring simple recipes, easy DIY projects & crafts, and frugal living ideas for real life.arlic Parmesan Roasted Broccoli With Broccoli, Olive Oil, Salt, Black Pepper, Garlic Cloves, Grated Parmesan Cheese, Breadcrumbs",
@@ -114,14 +117,14 @@ function FoodFetch() {
             suggestedWeather: "cloud"
         }
 
-    ]
-  
+    ])
     
-    return (
-        <p>card food</p>)
 
 
+    
 
-
+    return {food,updateFood}
 }
-export default FoodFetch;
+
+
+
