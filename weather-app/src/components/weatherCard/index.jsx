@@ -122,6 +122,8 @@ function WeatherCard() {
       break; 
   }}
 
+ 
+
   return (
     <Container>
       <Row xs={12} xl={12}>

@@ -18,7 +18,6 @@ import Card from "react-bootstrap/Card";
 
 function Header() {
 
-  
     return (
       <Container>
           <img></img>
