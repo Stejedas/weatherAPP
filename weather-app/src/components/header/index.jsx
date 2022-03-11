@@ -20,7 +20,7 @@ function Header() {
 
     return (
       <Container>
-          <img></img>
+        
         <Row>
           <Col xl={12}>
             <Navbar bg="light" expand="lg">
