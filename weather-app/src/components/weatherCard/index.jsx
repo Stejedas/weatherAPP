@@ -1,6 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import 'animate.css';
 
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
@@ -12,10 +11,14 @@ import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 
 import Stack from 'react-bootstrap/Stack'
+import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
 
 import { useEffect, useContext } from "react"
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
+
+
+import './style.css'
 
 let arraynumber = [1, 2, 3, 4, 5, 6, 7];
 let arrayd = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
@@ -75,8 +78,6 @@ function WeatherCard() {
     }
   }, [lat, lon, unitUse])
 
-  console.log(weather)
-
 
   function WriteDay(day){
     const date = new Date((day) * 1000);
@@ -99,6 +100,28 @@ function WeatherCard() {
   }
   }
 
+  function PrintWeather(typeWeahter){
+    switch(typeWeahter){
+      case 'Clear sky': return WiDaySunny();
+      break;
+      case 'Few clouds': return WiDayCloudy();
+      break;
+      case 'Scattered clouds': return WiCloud();
+      break;
+      case 'Broken clouds': return WiCloudy();
+      break;
+      case 'Shower rain': return WiRainMix();
+      break;
+      case 'Rain': return WiNightSleet();
+      break;
+      case 'Thunderstorm': return WiStormShowers();
+      break;
+      case 'Snow': return WiSnowflakeCold();
+      break;
+      case 'Mist': return WiWindy();
+      break; 
+  }}
+
   return (
     <Container>
       <Row>
@@ -120,7 +143,7 @@ function WeatherCard() {
                 <FormControl
                   type="search"
                   placeholder="Buscar pais..."
-                  BsGeoAltFill
+                  
                   className="me-2"
                   aria-label="Search"
                 />
@@ -132,8 +155,8 @@ function WeatherCard() {
         </Col>
       </Row>
       <Container>
-        <Row xs={12}>
-        <Stack direction="horizontal" >
+        <Row xs={12} xl={12}>
+        <Stack direction="horizontal"  >
           <Col xl={4}>
             <Card>
               <Card.Body>
@@ -180,21 +203,21 @@ function WeatherCard() {
         </Row>
       </Container>
       <Row>
-        <Col xs={12}> // COMIENZA LAS CARD DIAS POSTERIORES
-          <Stack direction="horizontal" gap="5">
+        <Col xs={12} > // COMIENZA LAS CARD DIAS POSTERIORES
+          <Stack direction="horizontal" className="d-flex justify-content-between" >
             { weather.daily?.map((c, i) => {
               if(i != 0){
               return (
-                <Card>
-                  <Card.Body>
-                    <Card.Title>
+                <Card key={c.dt} className='shadowCards'>
+                  
+                    <Card.Title className="title" >
               {WriteDay(c.dt)}
                     </Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    <div className="line"></div>
+                    <Card.Text className="icon">
+                    {PrintWeather(c.weather[0].main)}
                     </Card.Text>
-                  </Card.Body>
+                 
                 </Card>
               );
             }})}
