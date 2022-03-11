@@ -1,5 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import { useFood } from "../food-fetch/index.js";
 
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
@@ -13,7 +14,7 @@ import Card from "react-bootstrap/Card";
 import Stack from 'react-bootstrap/Stack'
 import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
 
-import { useEffect, useContext } from "react"
+import { useEffect, useContext,useState } from "react"
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
 
@@ -25,8 +26,11 @@ let arrayd = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "do
 
 function WeatherCard() {
 
+
   // PARTE DE FETCH 
   const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse] = useContext(weatherContext);
+  const {food, updateFood}=useFood([])
+  console.log(food)
 
   useEffect(() => {
     let options = {
@@ -157,6 +161,22 @@ function WeatherCard() {
       <Container>
         <Row xs={12} xl={12}>
         <Stack direction="horizontal"  >
+
+          <Col xl={4}>
+            <Card>
+              <Card.Body>
+                <Card.Title></Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Card Subtitle
+                </Card.Subtitle>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+
           <Col xl={4}>
             <Card>
               <Card.Body>
@@ -171,38 +191,22 @@ function WeatherCard() {
               </Card.Body>
             </Card>
           </Col>
+
           <Col xl={4}>
             <Card>
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+              <Card.Img  variant="top " class="img-fluid" src={food[0].img} />
+                <Card.Title>{food[0].name}</Card.Title>
+              
               </Card.Body>
             </Card>
           </Col>
-          <Col xl={4}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+
           </Stack>
         </Row>
       </Container>
       <Row>
+
         <Col xs={12} > // COMIENZA LAS CARD DIAS POSTERIORES
           <Stack direction="horizontal" className="d-flex justify-content-between" >
             { weather.daily?.map((c, i) => {
