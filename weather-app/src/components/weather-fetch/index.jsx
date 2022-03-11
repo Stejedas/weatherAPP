@@ -5,6 +5,7 @@ import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx"
 import { weatherContext } from "../context/context.jsx";
 
 
+
 function WeatherFetch() {
 
     const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse] = useContext(weatherContext);
