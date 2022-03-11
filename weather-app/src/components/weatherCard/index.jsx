@@ -10,7 +10,7 @@ import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import { BsGeoAltFill } from "react-icons/bs";
+
 import Stack from 'react-bootstrap/Stack'
 
 import { useEffect, useContext } from "react"
@@ -75,6 +75,8 @@ function WeatherCard() {
     }
   }, [lat, lon, unitUse])
 
+  console.log(weather)
+
 
   function WriteDay(day){
     const date = new Date((day) * 1000);
@@ -109,10 +111,10 @@ function WeatherCard() {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="#action1">Clima</Nav.Link>
+                <Nav.Link href="#action1">Favoritos</Nav.Link>
+                <Nav.Link href="#action1">Tipos</Nav.Link>
+                <Nav.Link href="#action1">Temporada</Nav.Link>
               </Nav>
               <Form className="d-flex">
                 <FormControl
@@ -124,6 +126,7 @@ function WeatherCard() {
                 />
 
               </Form>
+              <Button variant="light"><a>9</a></Button>
             </Navbar.Collapse>
           </Navbar>
         </Col>
