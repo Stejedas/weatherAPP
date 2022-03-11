@@ -1,4 +1,6 @@
+import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
 import { useEffect, useContext } from "react"
+import { useBootstrapBreakpoints } from "react-bootstrap/esm/ThemeProvider";
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
 
@@ -50,10 +52,7 @@ function WeatherFetch() {
         getWeatherByLocation(lat, lon, unitUse)
         .then(d => {
             updatetWeather(d);    
-            const date = new Date((d.current.dt+240000) * 1000);
-            const objdate = date.getDay()
-            console.log(objdate)
-            console.log(date)
+           
            
         })
         
