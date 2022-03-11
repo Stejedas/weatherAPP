@@ -9,6 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+
 import Stack from 'react-bootstrap/Stack'
 import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
 
@@ -77,7 +78,7 @@ function WeatherCard() {
     }
   }, [lat, lon, unitUse])
 
-console.log(weather)
+
   function WriteDay(day){
     const date = new Date((day) * 1000);
     const daydate = date.getDay()
@@ -133,10 +134,10 @@ console.log(weather)
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="#action1">Clima</Nav.Link>
+                <Nav.Link href="#action1">Favoritos</Nav.Link>
+                <Nav.Link href="#action1">Tipos</Nav.Link>
+                <Nav.Link href="#action1">Temporada</Nav.Link>
               </Nav>
               <Form className="d-flex">
                 <FormControl
@@ -148,6 +149,7 @@ console.log(weather)
                 />
 
               </Form>
+              <Button variant="light"><a>9</a></Button>
             </Navbar.Collapse>
           </Navbar>
         </Col>
