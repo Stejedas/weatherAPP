@@ -4,7 +4,7 @@ import { weatherContext } from "../context/context.jsx";
 function WeatherFetch() {
     const [lat, updateLat, lon, updateLon, weather, updatetWeather,weatherForecast, updateWeatherForecast] = useContext(weatherContext);
 
-     let key = ''
+     let key = '1f7689b2591acb5efd5d91b7e124bf44'
     
 
 
