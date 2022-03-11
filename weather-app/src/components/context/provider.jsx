@@ -6,11 +6,12 @@ function WeatherContexProvider({children}){
     const [lat,updateLat]=useState()
     const [lon,updateLon]=useState()
     const [weather,updatetWeather] = useState([])
-    const [weatherForecast, updateWeatherForecast]= useState([])
+    const [unitUse, updateUnitUse] = useState('')
+   
 
 
     return(
-        <weatherContext.Provider value={[lat,updateLat,lon,updateLon,weather,updatetWeather,weatherForecast, updateWeatherForecast]}>{children}</weatherContext.Provider>
+        <weatherContext.Provider value={[lat,updateLat,lon,updateLon,weather,updatetWeather, unitUse, updateUnitUse]}>{children}</weatherContext.Provider>
     )
 }
 export default WeatherContexProvider;
