@@ -1,6 +1,5 @@
-import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
+
 import { useEffect, useContext } from "react"
-import { useBootstrapBreakpoints } from "react-bootstrap/esm/ThemeProvider";
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
 
