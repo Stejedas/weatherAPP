@@ -86,41 +86,12 @@ function WeatherCard() {
 console.log(weather)
  
 
+ 
+
   return (
     <Container>
-      <Row>
-        <Col xl={12}>
-          <Navbar bg="light" expand="lg">
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <Nav.Link href="#action1">Clima</Nav.Link>
-                <Nav.Link href="#action1">Favoritos</Nav.Link>
-                <Nav.Link href="#action1">Tipos</Nav.Link>
-                <Nav.Link href="#action1">Temporada</Nav.Link>
-              </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Buscar pais..."
-                  
-                  className="me-2"
-                  aria-label="Search"
-                />
-
-              </Form>
-              <Button variant="light"><a>9</a></Button>
-            </Navbar.Collapse>
-          </Navbar>
-        </Col>
-      </Row>
-      <Container>
-        <Row xs={12} xl={12}>
-        <Stack direction="horizontal"  >
+      <Row xs={12} xl={12}>
+        <Stack direction="horizontal">
 
           <Col xl={4}>
             <Card>
@@ -162,13 +133,32 @@ console.log(weather)
             </Card>
           </Col>
 
+        </Stack>
+      </Row>
+      <Row>
+        <Col xs={12}>
+          {" "}
+          // COMIENZA LAS CARD DIAS POSTERIORES
+          <Stack
+            direction="horizontal"
+            className="d-flex justify-content-between"
+          >
+            {weather.daily?.map((c, i) => {
+              if (i != 0) {
+                return (
+                  <Card key={c.dt} className="shadowCards">
+                    <Card.Title className="title">{WriteDay(c.dt)}</Card.Title>
+                    <div className="line"></div>
+                    <Card.Text className="icon">
+                      {PrintWeather(c.weather[0].main)}
+                    </Card.Text>
+                  </Card>
+                );
+              }
+            })}
           </Stack>
-        </Row>
-      </Container>
-
-
-    //CARDS 7 DIAS SIGUIENTES //
-    <CardSevenDays infoDays={weather?.daily}></CardSevenDays>
+        </Col>
+      </Row>
 
     </Container>
   );

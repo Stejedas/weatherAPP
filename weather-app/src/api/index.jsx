@@ -13,7 +13,9 @@ export const getLatAndLonFromCity = async (citySearch) => {
 
 export const getWeatherByLocation = async (lat, lon, unit) => {
 
+
      let key = ''; 
+
 
      
 
