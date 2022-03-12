@@ -6,7 +6,8 @@ function WeatherContexProvider({children}){
     const [lat,updateLat]=useState()
     const [lon,updateLon]=useState()
     const [weather,updatetWeather] = useState([])
-    const [unitUse, updateUnitUse] = useState('')
+    const [unitUse, updateUnitUse] = useState('metric')
+    //imperial
    
 
 

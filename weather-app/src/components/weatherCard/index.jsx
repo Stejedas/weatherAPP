@@ -1,6 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import { useFood } from "../food-fetch/index.js";
+import { useFood } from "../food-object/index.js";
 
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
@@ -13,9 +13,10 @@ import Card from "react-bootstrap/Card";
 
 import Stack from 'react-bootstrap/Stack'
 
-import { useEffect, useContext,useState } from "react"
+import { useEffect, useContext, useState } from "react"
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
+import SecondCard from "../second-card/index.jsx"
 
 
 import './style.css'
@@ -29,7 +30,7 @@ function WeatherCard() {
 
   // PARTE DE FETCH 
   const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse] = useContext(weatherContext);
-  const {food, updateFood}=useFood([])
+  const { food, updateFood } = useFood([])
   console.log(food)
 
   useEffect(() => {
@@ -83,10 +84,10 @@ function WeatherCard() {
   }, [lat, lon, unitUse])
 
 
-console.log(weather)
- 
+  console.log(weather)
 
- 
+
+
 
   return (
     <Container>
@@ -108,57 +109,26 @@ console.log(weather)
             </Card>
           </Col>
 
-          <Col xl={4}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+          <SecondCard  infoDays={weather?.daily}></SecondCard>
+
 
           <Col xl={4}>
             <Card>
               <Card.Body>
-              <Card.Img  variant="top " class="img-fluid" src={food[0].img} />
+                <Card.Img variant="top " class="img-fluid" src={food[0].img} />
                 <Card.Title>{food[0].name}</Card.Title>
-              
+
               </Card.Body>
             </Card>
           </Col>
 
         </Stack>
       </Row>
-      <Row>
-        <Col xs={12}>
-          {" "}
-          // COMIENZA LAS CARD DIAS POSTERIORES
-          <Stack
-            direction="horizontal"
-            className="d-flex justify-content-between"
-          >
-            {weather.daily?.map((c, i) => {
-              if (i != 0) {
-                return (
-                  <Card key={c.dt} className="shadowCards">
-                    <Card.Title className="title">{WriteDay(c.dt)}</Card.Title>
-                    <div className="line"></div>
-                    <Card.Text className="icon">
-                      {PrintWeather(c.weather[0].main)}
-                    </Card.Text>
-                  </Card>
-                );
-              }
-            })}
-          </Stack>
-        </Col>
-      </Row>
+      
+      //CARDS 7 DIAS SIGUIENTES //
+    <CardSevenDays infoDays={weather?.daily}></CardSevenDays>
+
+      
 
     </Container>
   );
