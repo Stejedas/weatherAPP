@@ -17,6 +17,7 @@ import { useEffect, useContext, useState } from "react"
 import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
 import SecondCard from "../second-card/index.jsx"
+import FirstCard from "../firsrt-card/index.jsx";
 
 
 import './style.css'
@@ -88,20 +89,8 @@ console.log(lon)
       <Row xs={12} xl={12}>
         <Stack direction="horizontal">
 
-          <Col xl={4}>
-            <Card>
-              <Card.Body>
-                <Card.Title></Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+
+          <FirstCard infoDays={weather?.daily}></FirstCard>
 
           <SecondCard  infoDays={weather?.daily}></SecondCard>
 
