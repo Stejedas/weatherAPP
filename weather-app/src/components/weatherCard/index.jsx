@@ -22,6 +22,7 @@ import SecondCard from "../second-card/index.jsx"
 import './style.css'
 import CardSevenDays from "../CardSevenDays/index.js";
 import FoodCard from "../filterFood/index.jsx";
+import Header from '../header/index.jsx'
 
 let arraynumber = [1, 2, 3, 4, 5, 6, 7];
 let arrayd = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
@@ -56,19 +57,7 @@ function WeatherCard() {
     navigator.geolocation.getCurrentPosition(success, error, options);
 
   }, [])
-
-  const handleSearchCity = () => {
-
-  }
-  /*  
-  useEffect(()=>{
-    getLatAndLonFromCity('carcagente')
-    .then(d => {
-        updateLat(d.coord.lat)
-        updateLon(d.coord.lon)
-        console.log(d)
-    })
-  }, [])*/
+  
 
   useEffect(() => {
     console.log(lon)
@@ -88,10 +77,14 @@ function WeatherCard() {
   console.log(weather)
 
 
-
+console.log(lat)
+console.log(lon)
 
   return (
     <Container>
+      <Row xs={12}>
+      <Header upload={{updateLat, updateLon}}></Header>
+      </Row>
       <Row xs={12} xl={12}>
         <Stack direction="horizontal">
 
