@@ -10,35 +10,48 @@ import Card from "react-bootstrap/Card";
 
 function FoodCard(props) {
 
+    // revisar el xq me hace cuatro veces el useFood
+
     const { food, updateFood } = useFood([])
 
     const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse, foodFiltered, updateFoodFiltered] = useContext(weatherContext);
     console.log(`${props.infoDays?.[0]?.weather[0].main}`)
-    console.log(props.infoDays)
+    // console.log(props.infoDays)
 
 
     function filterFoods() {
         switch (`${props.infoDays?.[0]?.weather[0].main}`) {
-            case 'clear': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'))
-
+            case 'Clear sky': updateFood(food.filter(i => i.suggestedWeather === 'clear'));
                 break;
-            case 'rain': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'))
-
+            case 'Few clouds': updateFood(food.filter(i => i.suggestedWeather === 'clear'));
                 break;
-            case 'clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'))
-
+            case 'Shower rain': updateFood(food.filter(i => i.suggestedWeather === 'rain'));
                 break;
-
+            case 'Thunderstorm': updateFood(food.filter(i => i.suggestedWeather === 'rain'));
+                break;
+            case 'Rain': updateFood(food.filter(i => i.suggestedWeather === 'rain'));
+                break;
+            case 'Clouds': updateFood(food.filter(i => i.suggestedWeather === 'cloud'));
+                break;
+            case 'Scattered clouds': updateFood(food.filter(i => i.suggestedWeather === 'cloud'));
+                break;
+            case 'Broken clouds': updateFood(food.filter(i => i.suggestedWeather === 'cloud'));
+                break;
+            case 'Snow': updateFood(food.filter(i => i.suggestedWeather === 'rain'));
+                break;
+            case 'Mist': updateFood(food.filter(i => i.suggestedWeather === 'cloud'));
+                break;
             default:
                 break;
         }
+        
     }
-    console.log(foodFiltered)
+    console.log(food)
 
     return (<Col xl={4}>
         <Card>
             <Card.Body >
-                <Card.Img variant="top " class="img-fluid" src={food[2].img} />
+                <Card.Img variant="top " class="img-fluid" src={food[Math.floor(Math.random()*16)].img} />
                 <Card.Title>{food[2].name}</Card.Title>
 
             </Card.Body>
