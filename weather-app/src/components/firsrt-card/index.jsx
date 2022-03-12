@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form'
 
 function FirstCard(props) {
 
-  console.log(props)
+  // console.log(props)
 
   function PrintWeather(typeWeahter) {
     switch (typeWeahter) {
@@ -49,7 +49,7 @@ const hadleChangeMethod = e =>{
   }
 }
 
-  console.log(props);
+  // console.log(props);
   return (
     <Col xl={4}>
       <Card className="shadow p-3 mb-4 bg-white rounded">

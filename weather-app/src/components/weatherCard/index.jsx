@@ -78,9 +78,9 @@ function WeatherCard() {
   // console.log(weather)
 
 
-console.log(lat)
-console.log(lon)
-
+// console.log(lat)
+// console.log(lon)
+   console.log (weather?.daily)
   return (
     <Container>
       <Row xs={12}>
