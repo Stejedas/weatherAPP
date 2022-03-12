@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form'
 
 function FirstCard(props) {
 
+  console.log(props)
 
   function PrintWeather(typeWeahter) {
     switch (typeWeahter) {
@@ -41,6 +42,13 @@ function FirstCard(props) {
     }
   }
 
+const hadleChangeMethod = e =>{
+  if(props.upload.unitUse !== 'imperial'){
+  props.upload.updateUnitUse('imperial')} else {
+    props.upload.updateUnitUse('metric')
+  }
+}
+
   console.log(props);
   return (
     <Col xl={4}>
@@ -57,8 +65,11 @@ function FirstCard(props) {
             {`${props.infoDays?.[0]?.weather[0].main}`}
           </Card.Subtitle>
 
-          <Form></Form>
-          <Card.Text></Card.Text>
+          <Button onClick={hadleChangeMethod}>
+              F/C
+          </Button>
+         
+   
         </Card.Body>
       </Card>
     </Col>

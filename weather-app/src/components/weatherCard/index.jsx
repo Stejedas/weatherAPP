@@ -90,9 +90,9 @@ console.log(lon)
         <Stack direction="horizontal">
 
 
-          <FirstCard infoDays={weather?.daily}></FirstCard>
+          <FirstCard upload={{unitUse, updateUnitUse}} infoDays={weather?.daily}></FirstCard>
 
-          <SecondCard  infoDays={weather?.daily}></SecondCard>
+          <SecondCard units={unitUse} infoDays={weather?.daily}></SecondCard>
 
 
          <FoodCard  infoDays={weather?.daily}></FoodCard>
