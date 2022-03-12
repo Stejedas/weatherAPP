@@ -4,12 +4,13 @@ import Container from "react-bootstrap/Container";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
 import Button from "react-bootstrap/Button";
+import headerfoto from '../../assets/img/headerfoto.jpg'
 
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { weatherContext } from "../context/context";
 import { getLatAndLonFromCity } from "../../api";
 // import {BsGeoAltFill} from 'react-icons/Bs'
@@ -59,8 +60,11 @@ function Header(props) {
   
   
     return (
-      <Container>
-        
+      <React.Fragment>
+              <Container fluid>
+        <img src={headerfoto} className="img-fluid" alt="..."></img>
+        </Container>
+        <Container>
         <Row>
           <Col xl={12}>
             <Navbar bg="light" expand="lg">
@@ -95,6 +99,9 @@ function Header(props) {
           </Col>
         </Row>
       </Container>
+
+      </React.Fragment>
+
     );
   }
   export default Header;
