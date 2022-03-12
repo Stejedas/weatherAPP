@@ -6,6 +6,7 @@ function SecondCard(props) {
 
 
 
+
   return (
     <Col xl={4}>
       <Card className="p-3 mb-4 border-0 bg-white rounded" style={{ width: '400px', height: '261px'}}>
@@ -29,6 +30,7 @@ function SecondCard(props) {
       </Card>
     </Col>
   )
+
 }
 
 export default SecondCard;
