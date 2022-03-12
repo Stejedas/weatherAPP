@@ -19,7 +19,7 @@ function SecondCard(props){
 
     return (
         <Col xl={4}>
-        <Card>
+        <Card  className="shadow p-3 mb-4 bg-white rounded">
           <Card.Body>
             <Card.Text className='d-flex justify-content-between'>
             <strong>Thermal Sensation: </strong> {parseInt(props.infoDays?.[0]['feels_like'].day)? parseInt(props.infoDays?.[0]['feels_like'].day) : <div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div> }
