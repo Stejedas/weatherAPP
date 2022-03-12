@@ -17,6 +17,8 @@ function SecondCard(props){
         case (337.511 < or): return "N";break;
     }}
 
+        
+
     return (
         <Col xl={4}>
         <Card>

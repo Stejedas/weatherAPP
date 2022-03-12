@@ -4,7 +4,7 @@ import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, Wi
 
 function CardSevenDays(laterDays) {
 
-
+   
     
     function WriteDay(day) {
         const date = new Date((day) * 1000);
