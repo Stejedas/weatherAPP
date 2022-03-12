@@ -27,10 +27,7 @@ function Header() {
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
-                  className="me-auto my-2 my-lg-0"
-                  style={{ maxHeight: "100px" }}
-                  navbarScroll
-                >
+                  className="m-auto my-2 p-2 gap-5 my-lg-0"style={{ maxHeight: "100px" }}navbarScroll>
                   <Nav.Link href="#action1">Clima</Nav.Link>
                   <Nav.Link href="#action1">Favoritos</Nav.Link>
                   <Nav.Link href="#action1">Tipos</Nav.Link>
@@ -40,13 +37,15 @@ function Header() {
                   <FormControl
                     type="search"
                     placeholder="Buscar pais..."
-                    className="me-2"
-                    aria-label="Search"
-                  />
+                    className="me-4"
+                    aria-label="Search"/>
                 </Form>
                 <Button variant="light">
                  
                 </Button>
+                <Button variant="light">
+                 
+                 </Button>
               </Navbar.Collapse>
             </Navbar>
           </Col>
