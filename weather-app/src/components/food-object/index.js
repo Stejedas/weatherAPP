@@ -89,7 +89,7 @@ export let useFood = () => {
             ingredients: "Yukon Gold Potatoes, Garlic, Unsalted Butter, Heavy Whipping Cream, Sour Cream, Pepper, Salt, Salt",
             description: "Creamy Garlic Mashed Potatoes With Yukon Gold Potatoes, Garlic, Unsalted Butter, Heavy Whipping Cream, Sour Cream, Pepper, Salt, Salt",
             img: "https://lh3.googleusercontent.com/po-lxSbPOspCI_Y1zIh-pKaPAFbQA5GlxSfdiIViYzHe7sHcOnwUXCkoPK8LWDWzecOXroJgQ7j_MAtv-VXjFRU",
-            suggestedWeather: "sun"
+            suggestedWeather: "rain"
         }, {
             name: "Orange Chestnut Salad",
             ingredients: "Orange, chesnut,spinach,sprockets",
