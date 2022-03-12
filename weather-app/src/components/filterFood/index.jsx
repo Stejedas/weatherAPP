@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 
 
 
-
+  
 
 function FoodCard(props) {
 
@@ -58,10 +58,11 @@ function FoodCard(props) {
 
     return (<Col xl={4}>
 
-        <Card>
+        <Card style={{ width: '326px', height: '261px'}}>
             <Card.Body >
-                <Card.Img variant="top " class="img-fluid" src={foodFiltered[0].img} />
-                <Card.Title>{foodFiltered[2].name}</Card.Title>
+                <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={foodFiltered[0].img} />
+                <Card.Title className="fs-6">{foodFiltered[2].name}</Card.Title>
+
 
             </Card.Body>
         </Card>
