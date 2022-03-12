@@ -49,10 +49,10 @@ function FoodCard(props) {
     console.log(food)
 
     return (<Col xl={4}>
-        <Card>
+        <Card style={{ width: '326px', height: '261px'}}>
             <Card.Body >
-                <Card.Img variant="top " class="img-fluid" src={food[Math.floor(Math.random()*16)].img} />
-                <Card.Title>{food[2].name}</Card.Title>
+                <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={food[Math.floor(Math.random()*16)].img} />
+                <Card.Title className="fs-6">{food[2].name}</Card.Title>
 
             </Card.Body>
         </Card>
