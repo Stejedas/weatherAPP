@@ -21,6 +21,7 @@ import SecondCard from "../second-card/index.jsx"
 
 import './style.css'
 import CardSevenDays from "../CardSevenDays/index.js";
+import FoodCard from "../filterFood/index.jsx";
 
 let arraynumber = [1, 2, 3, 4, 5, 6, 7];
 let arrayd = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
@@ -112,15 +113,7 @@ function WeatherCard() {
           <SecondCard  infoDays={weather?.daily}></SecondCard>
 
 
-          <Col xl={4}>
-            <Card>
-              <Card.Body>
-                <Card.Img variant="top " class="img-fluid" src={food[0].img} />
-                <Card.Title>{food[0].name}</Card.Title>
-
-              </Card.Body>
-            </Card>
-          </Col>
+         <FoodCard  infoDays={weather?.daily}></FoodCard>
 
         </Stack>
       </Row>
