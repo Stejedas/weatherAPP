@@ -49,7 +49,7 @@ function CardSevenDays(laterDays) {
                 break;
         }
     }
-    console.log(laterDays.infoDays)
+    // console.log(laterDays.infoDays)
     return (
         <Container>
             <Row>

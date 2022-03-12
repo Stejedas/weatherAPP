@@ -32,7 +32,7 @@ function WeatherCard() {
   // PARTE DE FETCH 
   const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse] = useContext(weatherContext);
   const { food, updateFood } = useFood([])
-  console.log(food)
+  // console.log(food)
 
   useEffect(() => {
     let options = {
@@ -71,8 +71,8 @@ function WeatherCard() {
   }, [])*/
 
   useEffect(() => {
-    console.log(lon)
-    console.log(lat)
+    // console.log(lon)
+    // console.log(lat)
     if (lon !== undefined && lat !== undefined) {
       getWeatherByLocation(lat, lon, unitUse)
         .then(d => {
@@ -85,7 +85,7 @@ function WeatherCard() {
   }, [lat, lon, unitUse])
 
 
-  console.log(weather)
+  // console.log(weather)
 
 
 
