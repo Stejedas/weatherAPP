@@ -12,7 +12,7 @@ function App() {
  
   return (
     <WeatherContexProvider>
-      <Header></Header>
+     
     
       
       <WeatherCard></WeatherCard>
