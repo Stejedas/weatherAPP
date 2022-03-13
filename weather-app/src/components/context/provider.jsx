@@ -7,13 +7,13 @@ function WeatherContexProvider({children}){
     const [lon,updateLon]=useState()
     const [weather,updatetWeather] = useState([])
     const [unitUse, updateUnitUse] = useState('metric')
-    const [foodFiltered, updateFoodFiltered]=useState([])
+  
     //imperial
    
 
 
     return(
-        <weatherContext.Provider value={[lat,updateLat,lon,updateLon,weather,updatetWeather, unitUse, updateUnitUse,foodFiltered, updateFoodFiltered]}>{children}</weatherContext.Provider>
+        <weatherContext.Provider value={[lat,updateLat,lon,updateLon,weather,updatetWeather, unitUse, updateUnitUse]}>{children}</weatherContext.Provider>
     )
 }
 export default WeatherContexProvider;

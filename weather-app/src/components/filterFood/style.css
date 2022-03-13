@@ -1,0 +1,14 @@
+.title__foodCard {
+    display: flex;
+    justify-content: center;
+    font: size 6px;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+
+   /* font-family: 'Montserrat'; */
+}
+/* esto de aqui abajo iba en el cmponent del titulo */
+/* className="fs-6" */
+.container__foodCard{
+    box-shadow: 3px 5px 9px 3px rgba(50, 152, 164, 0.08);
+}

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { apikey } from '../api-key/key.js';
+
 
 
 
@@ -7,9 +7,7 @@ import { apikey } from '../api-key/key.js';
 export const getLatAndLonFromCity = async (citySearch) => {
     
 
-    let key = apikey;
-
-   
+    let key = '1a1e6b25ceb11d049c296f3b556eb6d6';
 
 
     const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${key}`)
@@ -20,13 +18,11 @@ export const getLatAndLonFromCity = async (citySearch) => {
 export const getWeatherByLocation = async (lat, lon, unit) => {
 
 
-
-     let key = apikey; 
-
-
-
+     let key = '1a1e6b25ceb11d049c296f3b556eb6d6'; 
 
      
+
+
 
     const r = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`)
     const d = await r.json()

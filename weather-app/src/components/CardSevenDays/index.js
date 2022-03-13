@@ -63,16 +63,18 @@ function CardSevenDays(laterDays) {
               break;
         }
       }
+
+      let arraySpiners = [1,2,3,4,5,6,7]
     // console.log(laterDays.infoDays)
     return (
         <Container>
             <Row>
                 <Col xs={12}> 
-                    <Stack direction="horizontal" className="d-flex justify-content-between" >
-                    {laterDays.infoDays?.map((c, i) => {
+                    <Stack direction="horizontal" className="d-flex justify-content-between mt-4 "  >
+                    {laterDays.infoDays? laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadowCards p-2'>
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 0, 0.12)'   >
 
                                         <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
@@ -85,7 +87,15 @@ function CardSevenDays(laterDays) {
                                     </Card>
                                 );
                             }
-                        })}
+                        }): arraySpiners.map(() => {
+                            return(
+                            <Card style={{ width: '115px', height: '160px'}} className='shadowCards p-2 d-flex justify-content-center'>
+                            <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-light"></div>
+                            </div>
+                            </Card>)
+                        })
+                        }
                     </Stack>
                 </Col>
             </Row>
