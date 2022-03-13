@@ -67,7 +67,7 @@ function Header(props) {
         <Container>
         <Row>
           <Col xl={12} className='d-flex justify-content-center'>
-            <Navbar bs="light" expand="lg" style={{ width: '100%', height:'56px'}}>
+            <Navbar bg="light" expand="lg" style={{ width: '100%', height:'56px'}}>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav

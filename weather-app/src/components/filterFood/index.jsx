@@ -22,17 +22,14 @@ function FoodCard(props) {
         const cloudRandom = Math.floor(Math.random() * foodCloudFiltered.length)
 
 
-<<<<<<< HEAD
         if (caseTW === 'Clear sky' || caseTW === 'Clear' || caseTW === 'Few clouds') {
-=======
-        if (caseTW === 'Clear sky' ||  caseTW=== 'Clear' ||caseTW === 'Few clouds') {
->>>>>>> f519538f2e4968e5ad49b2ba137c3f55edac0ee1
+
             return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }} className="shadow ">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodClearFiltered[clearRandom].img} />
-                        <Card.Title  className="title__foodCard ">{foodClearFiltered[clearRandom].name}</Card.Title>
+                        <Card.Title  className="title__foodCard text-center">{foodClearFiltered[clearRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
@@ -43,7 +40,7 @@ function FoodCard(props) {
                 <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodRainFiltered[rainRandom].img} />
-                        <Card.Title className="title__foodCard ">{foodRainFiltered[rainRandom].name}</Card.Title>
+                        <Card.Title className="title__foodCard text-center">{foodRainFiltered[rainRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
@@ -54,7 +51,7 @@ function FoodCard(props) {
                 <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodCloudFiltered[cloudRandom].img} />
-                        <Card.Title className="title__foodCard ">{foodCloudFiltered[cloudRandom].name}</Card.Title>
+                        <Card.Title className="title__foodCard text-center">{foodCloudFiltered[cloudRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
