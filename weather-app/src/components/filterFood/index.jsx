@@ -27,10 +27,10 @@ function FoodCard(props) {
             return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }} className="shadow ">
-                    <Card.Body >
+                
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodClearFiltered[clearRandom].img} />
-                        <Card.Title  className="title__foodCard text-center">{foodClearFiltered[clearRandom].name}</Card.Title>
-                    </Card.Body>
+                        <Card.Title  className="title__foodCard text-center p-1">{foodClearFiltered[clearRandom].name}</Card.Title>
+                   
                 </Card>
             </Col>)
 
@@ -38,10 +38,10 @@ function FoodCard(props) {
             return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
-                    <Card.Body >
+                
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodRainFiltered[rainRandom].img} />
-                        <Card.Title className="title__foodCard text-center">{foodRainFiltered[rainRandom].name}</Card.Title>
-                    </Card.Body>
+                        <Card.Title className="title__foodCard text-center p-1">{foodRainFiltered[rainRandom].name}</Card.Title>
+                  
                 </Card>
             </Col>)
 
@@ -49,10 +49,10 @@ function FoodCard(props) {
             return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
-                    <Card.Body >
+                   
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodCloudFiltered[cloudRandom].img} />
-                        <Card.Title className="title__foodCard text-center">{foodCloudFiltered[cloudRandom].name}</Card.Title>
-                    </Card.Body>
+                        <Card.Title className="title__foodCard text-center p-1">{foodCloudFiltered[cloudRandom].name}</Card.Title>
+             
                 </Card>
             </Col>)
 
@@ -67,7 +67,11 @@ function FoodCard(props) {
 
 
 
-            {props.infoDays?.[0]?.weather[0].main? writeCardFood(props.infoDays?.[0]?.weather[0].main) :  <Card style={{ width: '326px', height: '261px' }}></Card>}
+            {props.infoDays?.[0]?.weather[0].main? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <Card style={{ width: '326px', height: '251px'}} className='shadowCards p-2 d-flex justify-content-center'>
+                            <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary"></div>
+                            </div>
+                            </Card>}
 
 
 
