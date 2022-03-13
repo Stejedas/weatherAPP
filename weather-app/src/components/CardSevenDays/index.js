@@ -70,11 +70,11 @@ function CardSevenDays(laterDays) {
         <Container>
             <Row>
                 <Col xs={12}> 
-                    <Stack direction="horizontal" className="d-flex justify-content-between mt-4"  >
+                    <Stack direction="horizontal" className="d-flex justify-content-between mt-4 "  >
                     {laterDays.infoDays? laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadowCards p-2'>
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 0, 0.12)'   >
 
                                         <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
