@@ -17,14 +17,14 @@ export let useFood = () => {
             ingredients: "spaghetti,cherry tomatoes,spinach,diced red onion,black olives,lemon,,olive oil,salt,red pepper flakes,sugar",
             description: "Pasta Puttanesca With Spaghetti, Cherry Tomatoes, Spinach, Diced Red Onion, Capers, Black Olives, Lemon, Olive Oil, Garlic, Salt, Red Pepper Flakes",
             img: "https://lh3.googleusercontent.com/l86WSZmvGvi4VxH3RLp_gSscw3440zsyXaarvlYHYVVUfi6sGo1cPFb1O0eB8PY5quAM5ccgg8rS6lAtwdDfMa4",
-            suggestedWeather: "sun"
+            suggestedWeather: "clear"
         },
         {
             name: "Orecchiette with Broccoli Rabe and Sweet Italian Sausage",
             ingredients: "water,salt, garlic, broccoli",
             description: "Peppery broccoli rabe and spicy red pepper flakes kick up the flavor of this classic dish from Puglia. Learn to sweat garlic, emulsify your sauce, and why your choice of cheese matters.",
             img: "https://lh3.googleusercontent.com/AHySTwcv16pH8MU1o3AXcQ1JhuRevvCetLQyliqX6KJi6VauHqVDkgR5U0xQ9bQlJQxoeY5-Grme4-drl44JsQ",
-            suggestedWeather: "sun",
+            suggestedWeather: "clear",
 
         },
         {
@@ -33,7 +33,7 @@ export let useFood = () => {
             ingredients: "broccoli",
             img: "https://lh3.googleusercontent.com/815aru_GcGE9loiegEoct815oeozU_YnR4GosZFNfy0QARrSpYZ6pvozZf3WN_Ea_67XbUWoguuYLKtZVuN0ALE",
             description: "The Best Roasted Broccoli Recipes on Yummly | Roasted Broccoli, Oven Roasted Broccoli, Garlic Parmesan Roasted Broccoli",
-            suggestedWeather: "sun",
+            suggestedWeather: "clear",
 
         },
          {
@@ -53,7 +53,7 @@ export let useFood = () => {
             ingredients: "Large Eggs, Heavy Cream, Seasoning Salt, Fresh Baby Spinach, Bacon, Frozen Deep Dish Pie Crust",
             description: "Spinach And Bacon Quiche With Large Eggs, Heavy Cream, Seasoning Salt, Fresh Baby Spinach, Bacon, Frozen Deep Dish Pie Crust",
             img: "https://lh3.googleusercontent.com/IQfNoZ1ZbpxdXsT0EnBTQVsiNvsjFA0H0okH1Y_6VdbU3PdqOAqPGOSk8gsgNwGLZx8XEW2QE26M41hg3V3Ysg",
-            suggestedWeather: "sun"
+            suggestedWeather: "clear"
         }, {
             name: "Fried Chicken",
             ingredients: "chicke, olive-oil, salt, breaded",
@@ -65,13 +65,13 @@ export let useFood = () => {
             ingredients: "Eggplant, Tomato Sauce, Provolone Cheese, Cherry Tomatoes, Fresh Spinach, Himalayan Salt, Pepper Flakes",
             description: "Eggplant Pizza With Eggplant, Tomato Sauce, Provolone Cheese, Cherry Tomatoes, Fresh Spinach, Himalayan Salt, Pepper Flakes",
             img: "https://lh3.googleusercontent.com/BB9Vats2nf0dXhIFbDuxrI88dQPSU5UUDXXyMBOVY7MoYGVqqouYfOCcZmkpmV8I4bK9dGqEsDchCqMxU74dWg",
-            suggestedWeather: "sun"
+            suggestedWeather: "clear"
         }, {
             name: "Thai Cucumber Salad with Peanuts",
             ingredients: "cucumber, garlic, peanuts, salt, olive-oil, tomatoe",
             description: "Thai Cucumber Salad With Peanuts With Red Onion, English Cucumbers, Chopped Fresh Cilantro, Salted Peanuts, Jalapeño Pepper, Salt, Fresh Lime Juice, Vegetable Oil, Fish Sauce, Sugar, Garlic Clove",
             img: "https://lh3.googleusercontent.com/31hzHeNbMDgTHvVnpDBeTLRgCwoESUbkFffK6wC7xCjY0z0EMhvtgwe6X4BSbrqrL6uVQRK1GvB8QpXkUwXAiA",
-            suggestedWeather: "sun"
+            suggestedWeather: "clear"
         }, {
             name: "Green Bean Casserole",
             ingredients: "bean, besamel, cheese, salt, olive-oil, vegetables to taste",
@@ -95,7 +95,7 @@ export let useFood = () => {
             ingredients: "Orange, chesnut,spinach,sprockets",
             description: "This 6-ingredient salad is a light and bright addition to your winter table. In this recipe, you'll learn how to supreme an orange and make a miso-sherry dressing from scratch.",
             img: "https://lh3.googleusercontent.com/p82p6mZjHu2Ch2XTBqw5s23-_60Fw84uzh0Fon-C1a5TvPxu7sPqfxsKBgHeYc9mx4kEJ7aEbbgOdQRBZKAMLz6UlRXmuzkjWg",
-            suggestedWeather: "sun"
+            suggestedWeather: "clear"
         }
         , {
             name: "Fast and Easy Greek Grilled Eggplant",

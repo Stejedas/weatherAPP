@@ -48,6 +48,7 @@ function FirstCard(props) {
       case "Clear":
         return WiSunrise();
         break;
+        
     }
   }
 
