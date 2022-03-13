@@ -1,5 +1,7 @@
 import { Container, Row, Col, Stack, Card } from 'react-bootstrap'
-import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
+import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy, WiDayThunderstorm,WiThunderstorm,WiRain } from 'react-icons/wi'
+import {BsClouds} from 'react-icons/bs'
+import {IoIosSnow} from 'react-icons/io'
 import './style.css'
 
 function CardSevenDays(laterDays) {
@@ -29,31 +31,43 @@ function CardSevenDays(laterDays) {
 
     function PrintWeather(typeWeahter) {
         switch (typeWeahter) {
-            case 'Clear sky': return WiDaySunny();
+          case "Clear sky":
+            return WiDaySunny();
+            break;
+          case "Few clouds":
+            return WiDayCloudy();
+            break;
+            case "Scattered clouds":
+                return BsClouds();
                 break;
-            case 'Few clouds': return WiDayCloudy();
-                break;
-            case 'Scattered clouds': return WiCloud();
-                break;
-            case 'Broken clouds': return WiCloudy();
-                break;
-            case 'Shower rain': return WiRainMix();
-                break;
-            case 'Rain': return WiNightSleet();
-                break;
-            case 'Thunderstorm': return WiStormShowers();
-                break;
-            case 'Snow': return WiSnowflakeCold();
-                break;
-            case 'Mist': return WiWindy();
-                break;
+          case "Broken clouds":
+            return WiCloudy();
+            break;
+          case "Shower rain":
+            return WiRainMix();
+            break;
+          case "Rain":
+            return WiRain();
+            break;
+          case "Thunderstorm":
+            return WiThunderstorm();
+            break;
+          case "Snow":
+            return IoIosSnow();
+            break;
+          case "Mist":
+            return WiWindy();
+            break;
+          case "Clouds":
+              return WiCloud();
+              break;
         }
-    }
+      }
     // console.log(laterDays.infoDays)
     return (
         <Container>
             <Row>
-                <Col xs={12} > 
+                <Col xs={12}> 
                     <Stack direction="horizontal" className="d-flex justify-content-between" >
                     {laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
