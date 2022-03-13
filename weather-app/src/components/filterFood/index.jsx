@@ -16,7 +16,7 @@ function FoodCard(props) {
     
     
     
-
+/*
     function filterFoods(wt) {
         // console.log(food[0].suggestedWeather)
         switch (wt) {
@@ -53,17 +53,12 @@ function FoodCard(props) {
     updateFoodRandom(Math.floor(Math.random()*foodFiltered.length))
 
    filterFoods(props.infoDays?.[0]?.weather[0].main)
-    
+    */
 
-    return (<Col xl={4}>
+    return (<Col xl={3}>
 
         <Card style={{ width: '326px', height: '261px'}}>
-            <Card.Body >
-                <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={foodFiltered[FoodRandom].img} />
-                <Card.Title className="fs-6">{foodFiltered[FoodRandom].name}</Card.Title>
-
-
-            </Card.Body>
+            
         </Card>
     </Col>)
 }

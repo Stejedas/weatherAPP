@@ -80,14 +80,14 @@ function WeatherCard() {
 
 // console.log(lat)
 // console.log(lon)
-  //  console.log (weather?.daily)
+  console.log (weather)
   return (
     <React.Fragment>
     <Header upload={{updateLat, updateLon}}></Header>
     <Container>
       
       <Row xs={12} xl={12} >
-        <Stack direction="horizontal" className='d-flex justify-content-center'>
+        <Stack direction="horizontal" className='d-flex justify-content-center' style={{ width: '100%'}} gap={2}>
 
 
           <FirstCard upload={{unitUse, updateUnitUse}} infoDays={weather?.daily}></FirstCard>
