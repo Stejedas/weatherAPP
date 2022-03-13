@@ -81,7 +81,7 @@ function WeatherCard() {
   }, [lat, lon, unitUse])
 
 
-
+  {console.log(weather?.daily)}
 
   return (
     <React.Fragment>
