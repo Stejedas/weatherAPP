@@ -13,6 +13,9 @@ function FoodCard(props) {
     const [FoodRandom, updateFoodRandom]=useState('')
     const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse, foodFiltered, updateFoodFiltered] = useContext(weatherContext);
     // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
+    
+    
+    
 
     function filterFoods(wt) {
         // console.log(food[0].suggestedWeather)
@@ -25,7 +28,7 @@ function FoodCard(props) {
                 break;
             case 'Thunderstorm': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
                 break;
-            case 'Rain': updateFoodFiltered([...food.filter(i => i.suggestedWeather === 'rain')]);
+            case 'Rain': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
                 break;
             case 'Clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
                 break;
@@ -40,12 +43,17 @@ function FoodCard(props) {
             default:
                 break;
         }
+        
     }
+
+    updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'))
+    console.log (foodFiltered)
+    console.log(`${props.infoDays?.[0]?.weather[0].main}`)
     
     updateFoodRandom(Math.floor(Math.random()*foodFiltered.length))
 
    filterFoods(props.infoDays?.[0]?.weather[0].main)
-   console.log(foodFiltered)
+    
 
     return (<Col xl={4}>
 

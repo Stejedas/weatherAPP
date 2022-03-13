@@ -9,7 +9,7 @@ import { Stack } from "react-bootstrap";
 
 
 function FirstCard(props) {
-  console.log(props);
+  // console.log(props);
 
 
   function PrintWeather(typeWeahter) {

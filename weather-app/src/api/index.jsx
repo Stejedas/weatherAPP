@@ -19,7 +19,7 @@ export const getWeatherByLocation = async (lat, lon, unit) => {
 
 
 
-     let key = ''; 
+     let key = 'd'; 
 
 
 

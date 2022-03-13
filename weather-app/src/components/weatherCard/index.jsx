@@ -80,7 +80,7 @@ function WeatherCard() {
 
 // console.log(lat)
 // console.log(lon)
-   console.log (weather?.daily)
+  //  console.log (weather?.daily)
   return (
     <Container>
       <Row xs={12}>
@@ -95,13 +95,14 @@ function WeatherCard() {
           <SecondCard units={unitUse} infoDays={weather?.daily}></SecondCard>
 
 
-         {/* <FoodCard  infoDays={weather?.daily}></FoodCard> */}
+         <FoodCard  infoDays={weather?.daily}></FoodCard>
 
         </Stack>
       </Row>
       
       //CARDS 7 DIAS SIGUIENTES //
     <CardSevenDays infoDays={weather?.daily}></CardSevenDays>
+   
 
       
 
