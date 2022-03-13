@@ -64,7 +64,7 @@ function FoodCard(props) {
     }
     return (
         <React.Fragment>
-            { writeCardFood(props.infoDays?.[0]?.weather[0].main) 
+            {props.indoDays ? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <></>
 
 
 
