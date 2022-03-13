@@ -74,12 +74,12 @@ function CardSevenDays(laterDays) {
                     {laterDays.infoDays? laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 0, 0.12)'   >
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 110, 0.12)'   >
 
                                         <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
                                         </Card.Title>
-                                        <div className="border border-1 lineSevenCards" ></div>
+                                        <div className="border border-1 lineSevenCards"  ></div>
                                         <Card.Body className="iconSevenCards text-center p-0" style={{ width: '100%'}}>
                                             {PrintWeather(c.weather[0].main)}
                                         </Card.Body>
