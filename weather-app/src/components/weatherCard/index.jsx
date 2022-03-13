@@ -87,7 +87,7 @@ function WeatherCard() {
     <Container>
       
       <Row xs={12} xl={12} >
-        <Stack direction="horizontal" className='d-flex justify-content-center' style={{ width: '100%'}} gap={2}>
+        <Stack direction="horizontal" className='d-flex justify-content-center mt-4' style={{ width: '100%'}} gap={5}>
 
 
           <FirstCard upload={{unitUse, updateUnitUse}} infoDays={weather?.daily}></FirstCard>
@@ -95,7 +95,7 @@ function WeatherCard() {
           <SecondCard units={unitUse} infoDays={weather?.daily}></SecondCard>
 
 
-         <FoodCard  infoDays={weather}></FoodCard>
+         <FoodCard  infoDays={weather?.daily}></FoodCard>
 
         </Stack>
       </Row>

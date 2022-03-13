@@ -25,7 +25,7 @@ function FoodCard(props) {
         const cloudRandom = Math.floor(Math.random() * foodCloudFiltered.length)
 
 
-        if (caseTW === 'Clear sky' || caseTW === 'Few clouds') {
+        if (caseTW === 'Clear sky' || caseTW === 'Clear' || caseTW === 'Few clouds') {
             return (<Col xl={4}>
 
                 <Card style={{ width: '326px', height: '261px' }}>
@@ -66,7 +66,13 @@ function FoodCard(props) {
     }
     return (
         <React.Fragment>
-            { writeCardFood(props.infoDays?.[0]?.weather[0].main) 
+
+
+            {props.infoDays?.[0]?.weather[0].main? writeCardFood(props.infoDays?.[0]?.weather[0].main) :  <Card style={{ width: '326px', height: '261px' }}></Card>
+
+
+
+
             }
         </React.Fragment>
     )
