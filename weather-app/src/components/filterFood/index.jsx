@@ -12,37 +12,7 @@ function FoodCard(props) {
 
     const { food, updateFood } = useFood([])
     // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
-<<<<<<< HEAD
-    
-    
-    
-/*
-    function filterFoods(wt) {
-        // console.log(food[0].suggestedWeather)
-        switch (wt) {
-            case 'Clear sky': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'));
-                break;
-            case 'Few clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'));
-                break;
-            case 'Shower rain': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
-                break;
-            case 'Thunderstorm': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
-                break;
-            case 'Rain': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
-                break;
-            case 'Clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
-                break;
-            case 'Scattered clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
-                break;
-            case 'Broken clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
-                break;
-            case 'Snow': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
-                break;
-            case 'Mist': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
-                break;
-            default:
-                break;
-=======
+
 
 
     function writeCardFood(caseTW) {
@@ -91,35 +61,14 @@ function FoodCard(props) {
                 </Card>
             </Col>)
 
->>>>>>> f513647ea53ad13d693920d526681070655170f0
+
         }
     }
     return (
         <React.Fragment>
             { writeCardFood(props.infoDays?.[0]?.weather[0].main) 
-
-
-
             }
-
-<<<<<<< HEAD
-   filterFoods(props.infoDays?.[0]?.weather[0].main)
-    */
-
-    return (<Col xl={3}>
-
-        <Card style={{ width: '326px', height: '261px'}}>
-            
-        </Card>
-    </Col>)
+        </React.Fragment>
+    )
 }
 export default FoodCard;
-=======
-
-
-        </React.Fragment>
-
-    )}
-
-    export default FoodCard;
->>>>>>> f513647ea53ad13d693920d526681070655170f0
