@@ -26,7 +26,7 @@ function FoodCard(props) {
 
 
         if (caseTW === 'Clear sky' || caseTW === 'Clear' || caseTW === 'Few clouds') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }}>
                     <Card.Body >
@@ -39,7 +39,7 @@ function FoodCard(props) {
             </Col>)
 
         } else if (caseTW === 'Shower rain' || caseTW === 'Thunderstorm' || caseTW === 'Rain' || caseTW === 'Snow') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }}>
                     <Card.Body >
@@ -51,7 +51,7 @@ function FoodCard(props) {
 
 
         } else if (caseTW === 'Clouds' || caseTW === 'Scattered clouds' || caseTW === 'Broken clouds' || caseTW === 'Mist') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
                 <Card style={{ width: '326px', height: '261px' }}>
                     <Card.Body >
