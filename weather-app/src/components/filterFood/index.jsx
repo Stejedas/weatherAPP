@@ -9,7 +9,7 @@ function FoodCard(props) {
     // revisar el xq me hace cuatro veces el useFood
 
     const { food, updateFood } = useFood([])
-    // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
+
 
 
     function writeCardFood(caseTW) {

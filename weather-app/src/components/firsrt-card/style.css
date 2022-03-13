@@ -34,21 +34,21 @@ blocklquote{
     
     display: flex;
     align-items: center;
-    justify-content: center;
+  
 }
 .meteo2{
-    text-align: center;
+    
    
-    width: 60%;
+
     
     font-size: 20px;
 }
 
 .hola{
-    align-items: center;
-    padding-top: 15px;
+    
+   
     display: flex;
-    justify-content: space-around;
+   
 }
 .temperatura{
     font-weight: bold;

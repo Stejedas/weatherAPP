@@ -14,7 +14,7 @@ import Card from "react-bootstrap/Card";
 import Stack from 'react-bootstrap/Stack'
 
 import { useEffect, useContext, useState } from "react"
-import { getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
+import { getCityName, getLatAndLonFromCity, getWeatherByLocation } from "../../api/index.jsx";
 import { weatherContext } from "../context/context.jsx";
 import SecondCard from "../second-card/index.jsx"
 import FirstCard from "../firsrt-card/index.jsx";
@@ -32,9 +32,9 @@ function WeatherCard() {
 
 
   // PARTE DE FETCH 
-  const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse] = useContext(weatherContext);
+  const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse, city, uploadCity] = useContext(weatherContext);
   const { food, updateFood } = useFood([])
-  // console.log(food)
+
 
   useEffect(() => {
     let options = {
@@ -61,8 +61,7 @@ function WeatherCard() {
   
 
   useEffect(() => {
-    // console.log(lon)
-    // console.log(lat)
+ 
     if (lon !== undefined && lat !== undefined) {
       getWeatherByLocation(lat, lon, unitUse)
         .then(d => {
@@ -71,16 +70,19 @@ function WeatherCard() {
 
         })
 
+     if (lon !== undefined && lat !== undefined){
+       getCityName(lat, lon)
+       .then(d => {
+        uploadCity(d)
+       })
+     }
+
     }
   }, [lat, lon, unitUse])
 
 
-  // console.log(weather)
 
 
-// console.log(lat)
-// console.log(lon)
-console.log (weather)
   return (
     <React.Fragment>
     <Header upload={{updateLat, updateLon}}></Header>
@@ -90,7 +92,7 @@ console.log (weather)
         <Stack direction="horizontal" className='d-flex justify-content-center mt-4' style={{ width: '100%'}} gap={5}>
 
 
-          <FirstCard upload={{unitUse, updateUnitUse}} city={weather} infoDays={weather?.daily}></FirstCard>
+          <FirstCard upload={{unitUse, updateUnitUse}} city={city} infoDays={weather?.daily}></FirstCard>
 
           <SecondCard units={unitUse} infoDays={weather?.daily}></SecondCard>
 

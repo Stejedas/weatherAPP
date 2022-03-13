@@ -28,3 +28,13 @@ export const getWeatherByLocation = async (lat, lon, unit) => {
     const d = await r.json()
     return d
 }
+
+export const getCityName = async (lat, lon) => {
+
+    let key = '1a1e6b25ceb11d049c296f3b556eb6d6'; 
+
+    const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`)
+    const d = await r.json()
+    return d
+
+}
