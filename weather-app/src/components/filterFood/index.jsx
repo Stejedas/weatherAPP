@@ -5,14 +5,12 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
-
 function FoodCard(props) {
 
     // revisar el xq me hace cuatro veces el useFood
 
     const { food, updateFood } = useFood([])
     // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
-
 
     function writeCardFood(caseTW) {
         const foodClearFiltered = food.filter(i => i.suggestedWeather === 'clear');
@@ -24,15 +22,13 @@ function FoodCard(props) {
         const cloudRandom = Math.floor(Math.random() * foodCloudFiltered.length)
 
 
-        if (caseTW === 'Clear sky' || caseTW === 'Few clouds') {
+        if (caseTW === 'Clear sky' ||  caseTW=== 'Clear' ||caseTW === 'Few clouds') {
             return (<Col xl={4}>
 
                 <Card style={{ width: '326px', height: '261px' }}>
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodClearFiltered[clearRandom].img} />
                         <Card.Title className="fs-6">{foodClearFiltered[clearRandom].name}</Card.Title>
-
-
                     </Card.Body>
                 </Card>
             </Col>)
@@ -47,7 +43,6 @@ function FoodCard(props) {
                     </Card.Body>
                 </Card>
             </Col>)
-
 
         } else if (caseTW === 'Clouds' || caseTW === 'Scattered clouds' || caseTW === 'Broken clouds' || caseTW === 'Mist') {
             return (<Col xl={4}>
@@ -64,14 +59,7 @@ function FoodCard(props) {
     }
     return (
         <React.Fragment>
-            {props.indoDays ? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <></>
-
-
-
-            }
-
-
-
+            {props.indoDays ? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <></>}
         </React.Fragment>
 
     )}
