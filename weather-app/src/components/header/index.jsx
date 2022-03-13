@@ -44,7 +44,7 @@ function Header(props) {
   
   const handleSearchCity = e => {
     e.preventDefault()
-    console.log(e.target)
+    // console.log(e.target)
     getLatAndLonFromCity(e.target.searchCity.value)
       .then(d => {
     

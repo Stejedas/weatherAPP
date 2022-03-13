@@ -78,9 +78,9 @@ function WeatherCard() {
   // console.log(weather)
 
 
-console.log(lat)
-console.log(lon)
-
+// console.log(lat)
+// console.log(lon)
+  //  console.log (weather?.daily)
   return (
     <React.Fragment>
     <Header upload={{updateLat, updateLon}}></Header>
@@ -102,6 +102,7 @@ console.log(lon)
       
 
     <CardSevenDays infoDays={weather?.daily}></CardSevenDays>
+   
 
       
 

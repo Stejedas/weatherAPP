@@ -9,7 +9,8 @@ import { Stack } from "react-bootstrap";
 
 
 function FirstCard(props) {
-  console.log(props);
+  // console.log(props);
+
 
   function PrintWeather(typeWeahter) {
     switch (typeWeahter) {
@@ -51,7 +52,7 @@ function FirstCard(props) {
     }
   };
 
-  console.log(props);
+  // console.log(props);
   return (
     <Col xl={3}>
       <Card className="p-3 mb-4 bg-white rounded" style={{ width: '326px', height: '231px'}} >
