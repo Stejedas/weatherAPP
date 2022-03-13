@@ -59,19 +59,29 @@ function FirstCard(props) {
       props.upload.updateUnitUse("metric");
     }
   };
+console.log(props.city)
 
+function printCity(){
+
+  const objCity = props.city.split('/')
+console.log(objCity)
+   return <p>{`${objCity[1]}`}</p>
+
+}
   // console.log(props);
   return (
     <Col xl={3}>
-      <Card
+
+    {
+      props.infoDays? <Card
         className="p-1 mb-1 bg-white rounded-3 "
         style={{ width: "326px", height: "261px" }}
       >
         <Card.Body>
 
-          <Card.Title><p>Madrid</p></Card.Title>
+          <Card.Title>{props.city? <></>: <></>}</Card.Title>
 
-          <p className="inform">EL TIEMPO AHORA</p>
+          <p className="inform">THE CURRENT WEATHER</p>
 
           {/* icono y temperatura local */}
 
@@ -81,19 +91,28 @@ function FirstCard(props) {
           </Stack>
 
           {/* estado del tiempo en texto */}
-          <Container direction="horizontal"className="hola">
+          <Container direction="horizontal" className="hola">
 
-          <Stack><Card.Subtitle className="meteo2"><a>{`${props.infoDays?.[0]?.weather[0].main}`}</a></Card.Subtitle> </Stack>
+          <Stack><Card.Subtitle className="meteo2 mt-2"><a>{`${props.infoDays?.[0]?.weather[0].main}`}</a></Card.Subtitle> </Stack>
    
-          <Stack direction="horizontal">
-            <Button className="btn__f" onClick={hadleChangeMethod}></Button>
-            <p className="cambiante"> C </p><p> / </p><p className="cambiante"> ºF</p>
+         
+            <Button className="btn btn-outline-primary border-white bg-white text-dark" onClick={hadleChangeMethod}>
+            <Stack direction="horizontal">
+            <p className="cambiante" > C </p><p> / </p><p className="cambiante"> ºF</p>
             </Stack>
+            </Button>
+           
    
           </Container>
 
         </Card.Body>
-      </Card>
+      </Card> : <Card style={{ width: '326px', height: '251px'}} className='shadowCards p-2 d-flex justify-content-center'>
+                            <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary"></div>
+                            </div>
+                            </Card>
+    }
+      
     </Col>
   );
 }

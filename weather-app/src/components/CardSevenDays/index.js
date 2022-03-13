@@ -12,19 +12,19 @@ function CardSevenDays(laterDays) {
         const date = new Date((day) * 1000);
         const daydate = date.getDay()
         switch (daydate) {
-            case 0: return 'Domingo';
+            case 0: return 'Sunday';
                 break;
-            case 1: return 'Lunes';
+            case 1: return 'Monday';
                 break;
-            case 2: return 'Martes';
+            case 2: return 'Thusday';
                 break;
-            case 3: return 'Miercoles';
+            case 3: return 'Wednesday';
                 break;
-            case 4: return 'Jueves';
+            case 4: return 'Thursday';
                 break;
-            case 5: return 'Viernes';
+            case 5: return 'Friday';
                 break;
-            case 6: return 'Sábado';
+            case 6: return 'Saturday';
                 break;
         }
     }
@@ -69,17 +69,17 @@ function CardSevenDays(laterDays) {
     return (
         <Container>
             <Row>
-                <Col xs={12}> 
+                <Col xs={{ span: 10, offset: 1 }} > 
                     <Stack direction="horizontal" className="d-flex justify-content-between mt-4 "  >
                     {laterDays.infoDays? laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 110, 0.12)'   >
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow d-flex justify-content-center'   >
 
-                                        <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
+                                        <Card.Title className="titleSevenCards text-center text-info mt-2" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
                                         </Card.Title>
-                                        <div className="border border-1 lineSevenCards"  ></div>
+                                        <div className="d-flex justify-content-center mt-2"  style={{ width: '100%'}}> <div className='border border-1 ' style={{ width: '80%'}}> </div></div>
                                         <Card.Body className="iconSevenCards text-center p-0" style={{ width: '100%'}}>
                                             {PrintWeather(c.weather[0].main)}
                                         </Card.Body>
@@ -91,7 +91,7 @@ function CardSevenDays(laterDays) {
                             return(
                             <Card style={{ width: '115px', height: '160px'}} className='shadowCards p-2 d-flex justify-content-center'>
                             <div class="d-flex justify-content-center">
-                            <div class="spinner-border text-light"></div>
+                            <div class="spinner-border text-primary"></div>
                             </div>
                             </Card>)
                         })
