@@ -1,19 +1,16 @@
 import { useFood } from "../food-object/index.js";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { weatherContext } from "../context/context.jsx";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
-
-
-  
 
 function FoodCard(props) {
 
     // revisar el xq me hace cuatro veces el useFood
 
     const { food, updateFood } = useFood([])
-
+    const [FoodRandom, updateFoodRandom]=useState('')
     const [lat, updateLat, lon, updateLon, weather, updatetWeather, unitUse, updateUnitUse, foodFiltered, updateFoodFiltered] = useContext(weatherContext);
     // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
 
@@ -28,7 +25,7 @@ function FoodCard(props) {
                 break;
             case 'Thunderstorm': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
                 break;
-            case 'Rain': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'rain'));
+            case 'Rain': updateFoodFiltered([...food.filter(i => i.suggestedWeather === 'rain')]);
                 break;
             case 'Clouds': updateFoodFiltered(food.filter(i => i.suggestedWeather === 'cloud'));
                 break;
@@ -43,25 +40,19 @@ function FoodCard(props) {
             default:
                 break;
         }
-
     }
-    console.log(foodFiltered)
-
-    const FoodRandom = Math.floor(Math.random()*foodFiltered.length)
-     
-
+    
+    updateFoodRandom(Math.floor(Math.random()*foodFiltered.length))
 
    filterFoods(props.infoDays?.[0]?.weather[0].main)
-
-
-  
+   console.log(foodFiltered)
 
     return (<Col xl={4}>
 
         <Card style={{ width: '326px', height: '261px'}}>
             <Card.Body >
-                <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={foodFiltered[0].img} />
-                <Card.Title className="fs-6">{foodFiltered[2].name}</Card.Title>
+                <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={foodFiltered[FoodRandom].img} />
+                <Card.Title className="fs-6">{foodFiltered[FoodRandom].name}</Card.Title>
 
 
             </Card.Body>

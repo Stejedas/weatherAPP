@@ -5,9 +5,9 @@ import { useContext } from 'react';
 export const getLatAndLonFromCity = async (citySearch) => {
     
 
-    let key = ''
+    let key = '';
 
-    let key = ''
+   
 
 
     const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${key}`)

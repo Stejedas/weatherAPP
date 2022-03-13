@@ -95,7 +95,7 @@ function WeatherCard() {
           <SecondCard units={unitUse} infoDays={weather?.daily}></SecondCard>
 
 
-         <FoodCard  infoDays={weather?.daily}></FoodCard>
+         {/* <FoodCard  infoDays={weather?.daily}></FoodCard> */}
 
         </Stack>
       </Row>
