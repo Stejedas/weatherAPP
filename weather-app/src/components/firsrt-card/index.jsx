@@ -12,8 +12,7 @@ import Container from 'react-bootstrap/Container'
 
 
 function FirstCard(props) {
-  // console.log(props);
-
+ 
   function PrintWeather(typeWeahter) {
     switch (typeWeahter) {
       case "Clear sky":
@@ -59,16 +58,15 @@ function FirstCard(props) {
       props.upload.updateUnitUse("metric");
     }
   };
-console.log(props.city)
 
 function printCity(){
 
   const objCity = props.city.split('/')
-console.log(objCity)
+
    return <p>{`${objCity[1]}`}</p>
 
 }
-  // console.log(props);
+
   return (
     <Col xl={3}>
 
@@ -79,7 +77,7 @@ console.log(objCity)
       >
         <Card.Body>
 
-          <Card.Title>{props.city? <></>: <></>}</Card.Title>
+          <Card.Title>{props.city? props.city.name : <></>}</Card.Title>
 
           <p className="inform">THE CURRENT WEATHER</p>
 
@@ -91,7 +89,7 @@ console.log(objCity)
           </Stack>
 
           {/* estado del tiempo en texto */}
-          <Container direction="horizontal" className="hola">
+          <Container direction="horizontal" className="hola d-flex justify-content-between p-0" style={{ width: "100%"}}>
 
           <Stack><Card.Subtitle className="meteo2 mt-2"><a>{`${props.infoDays?.[0]?.weather[0].main}`}</a></Card.Subtitle> </Stack>
    
