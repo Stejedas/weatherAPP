@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { useFood } from "../food-object/index.js";
-
+import React from "react";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
 import Button from "react-bootstrap/Button";
@@ -80,14 +80,14 @@ function WeatherCard() {
 
 // console.log(lat)
 // console.log(lon)
-  //  console.log (weather?.daily)
+ // console.log (weather)
   return (
+    <React.Fragment>
+    <Header upload={{updateLat, updateLon}}></Header>
     <Container>
-      <Row xs={12}>
-      <Header upload={{updateLat, updateLon}}></Header>
-      </Row>
-      <Row xs={12} xl={12}>
-        <Stack direction="horizontal">
+      
+      <Row xs={12} xl={12} >
+        <Stack direction="horizontal" className='d-flex justify-content-center mt-4' style={{ width: '100%'}} gap={5}>
 
 
           <FirstCard upload={{unitUse, updateUnitUse}} infoDays={weather?.daily}></FirstCard>
@@ -100,13 +100,14 @@ function WeatherCard() {
         </Stack>
       </Row>
       
-      //CARDS 7 DIAS SIGUIENTES //
+
     <CardSevenDays infoDays={weather?.daily}></CardSevenDays>
    
 
       
 
     </Container>
+    </React.Fragment>
   );
 }
 export default WeatherCard;

@@ -1,6 +1,8 @@
 import { Container, Row, Col, Stack, Card } from 'react-bootstrap'
-import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
-
+import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy, WiDayThunderstorm,WiThunderstorm,WiRain } from 'react-icons/wi'
+import {BsClouds} from 'react-icons/bs'
+import {IoIosSnow} from 'react-icons/io'
+import './style.css'
 
 function CardSevenDays(laterDays) {
 
@@ -29,49 +31,71 @@ function CardSevenDays(laterDays) {
 
     function PrintWeather(typeWeahter) {
         switch (typeWeahter) {
-            case 'Clear sky': return WiDaySunny();
+          case "Clear sky":
+            return WiDaySunny();
+            break;
+          case "Few clouds":
+            return WiDayCloudy();
+            break;
+            case "Scattered clouds":
+                return BsClouds();
                 break;
-            case 'Few clouds': return WiDayCloudy();
-                break;
-            case 'Scattered clouds': return WiCloud();
-                break;
-            case 'Broken clouds': return WiCloudy();
-                break;
-            case 'Shower rain': return WiRainMix();
-                break;
-            case 'Rain': return WiNightSleet();
-                break;
-            case 'Thunderstorm': return WiStormShowers();
-                break;
-            case 'Snow': return WiSnowflakeCold();
-                break;
-            case 'Mist': return WiWindy();
-                break;
+          case "Broken clouds":
+            return WiCloudy();
+            break;
+          case "Shower rain":
+            return WiRainMix();
+            break;
+          case "Rain":
+            return WiRain();
+            break;
+          case "Thunderstorm":
+            return WiThunderstorm();
+            break;
+          case "Snow":
+            return IoIosSnow();
+            break;
+          case "Mist":
+            return WiWindy();
+            break;
+          case "Clouds":
+              return WiCloud();
+              break;
         }
-    }
+      }
+
+      let arraySpiners = [1,2,3,4,5,6,7]
     // console.log(laterDays.infoDays)
     return (
         <Container>
             <Row>
-                <Col xs={12} > // COMIENZA LAS CARD DIAS POSTERIORES
-                    <Stack direction="horizontal" className="d-flex justify-content-between" >
-                    {laterDays.infoDays?.map((c, i) => {
+                <Col xs={12}> 
+                    <Stack direction="horizontal" className="d-flex justify-content-between mt-4 "  >
+                    {laterDays.infoDays? laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadowCards '>
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadow 0px 4px 8px rgba(0, 0, 0, 0.12)'   >
 
-                                        <Card.Title className="title" style={{ width: '115px'}}>
+                                        <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
                                         </Card.Title>
-                                        <div className="line"></div>
-                                        <Card.Text className="icon" style={{ width: '115px'}}>
+                                        <div className="border border-1 lineSevenCards" ></div>
+                                        <Card.Body className="iconSevenCards text-center p-0" style={{ width: '100%'}}>
                                             {PrintWeather(c.weather[0].main)}
-                                        </Card.Text>
+                                        </Card.Body>
 
                                     </Card>
                                 );
                             }
-                        })}
+                        }): arraySpiners.map(() => {
+                            return(
+                            <Card style={{ width: '115px', height: '160px'}} className='shadowCards p-2 d-flex justify-content-center'>
+                            <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-light"></div>
+                            </div>
+                            </Card>)
+                        })
+                        }
                     </Stack>
                 </Col>
             </Row>

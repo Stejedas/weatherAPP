@@ -1,7 +1,6 @@
 import { useFood } from "../food-object/index.js";
-import { useContext, useEffect, useState } from "react";
-import { weatherContext } from "../context/context.jsx";
 import React from "react";
+import "./style.css";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
@@ -11,6 +10,7 @@ function FoodCard(props) {
 
     const { food, updateFood } = useFood([])
     // console.log(`${props.infoDays?.[0]?.weather[0].main}`)
+
 
     function writeCardFood(caseTW) {
         const foodClearFiltered = food.filter(i => i.suggestedWeather === 'clear');
@@ -23,45 +23,54 @@ function FoodCard(props) {
 
 
         if (caseTW === 'Clear sky' ||  caseTW=== 'Clear' ||caseTW === 'Few clouds') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
-                <Card style={{ width: '326px', height: '261px' }}>
+                <Card style={{ width: '326px', height: '261px' }} className="shadow ">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodClearFiltered[clearRandom].img} />
-                        <Card.Title className="fs-6">{foodClearFiltered[clearRandom].name}</Card.Title>
+                        <Card.Title  className="title__foodCard ">{foodClearFiltered[clearRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
 
         } else if (caseTW === 'Shower rain' || caseTW === 'Thunderstorm' || caseTW === 'Rain' || caseTW === 'Snow') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
-                <Card style={{ width: '326px', height: '261px' }}>
+                <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodRainFiltered[rainRandom].img} />
-                        <Card.Title className="fs-6">{foodRainFiltered[rainRandom].name}</Card.Title>
+                        <Card.Title className="title__foodCard ">{foodRainFiltered[rainRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
 
         } else if (caseTW === 'Clouds' || caseTW === 'Scattered clouds' || caseTW === 'Broken clouds' || caseTW === 'Mist') {
-            return (<Col xl={4}>
+            return (<Col xl={3}>
 
-                <Card style={{ width: '326px', height: '261px' }}>
+                <Card style={{ width: '326px', height: '261px' }}className="container__foodCard">
                     <Card.Body >
                         <Card.Img variant="top " style={{ width: '326px', height: '194px' }} class="img-fluid" src={foodCloudFiltered[cloudRandom].img} />
-                        <Card.Title className="fs-6">{foodCloudFiltered[cloudRandom].name}</Card.Title>
+                        <Card.Title className="title__foodCard ">{foodCloudFiltered[cloudRandom].name}</Card.Title>
                     </Card.Body>
                 </Card>
             </Col>)
+
 
         }
     }
     return (
         <React.Fragment>
-            {props.indoDays ? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <></>}
+
+            {/* {props.indoDays ? writeCardFood(props.infoDays?.[0]?.weather[0].main) : <></>} */}
+
+
+
+            {props.infoDays?.[0]?.weather[0].main? writeCardFood(props.infoDays?.[0]?.weather[0].main) :  <Card style={{ width: '326px', height: '261px' }}></Card>}
+
+
+
+
         </React.Fragment>
-
-    )}
-
-    export default FoodCard;
+    )
+}
+export default FoodCard;

@@ -1,10 +1,10 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-
+import './style.css'
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
 import Button from "react-bootstrap/Button";
-import headerfoto from '../../assets/img/headerfoto.jpg'
+import recortada from '../../assets/recortada.jpg'
 
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
@@ -61,17 +61,17 @@ function Header(props) {
   
     return (
       <React.Fragment>
-              <Container fluid>
-        <img src={headerfoto} className="img-fluid" alt="..."></img>
+        <Container fluid>
+        <img src={recortada} style={{ width: '100%'}} className='positionImgHeader' alt="..."></img>
         </Container>
         <Container>
         <Row>
-          <Col xl={12}>
-            <Navbar bg="light" expand="lg">
+          <Col xl={12} className='d-flex justify-content-center'>
+            <Navbar bg="light" expand="lg" style={{ width: '100%', height:'56px'}}>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
-                  className="m-auto my-2 p-2 gap-5 my-lg-0"style={{ maxHeight: "100px" }}navbarScroll>
+                  className="m-auto my-2 p-2 gap-5 my-lg-0 d-flex justify-content-between pl-5 pr-5" style={{ width: '60%'}} navbarScroll>
                   <Nav.Link href="#action1">Clima</Nav.Link>
                   <Nav.Link href="#action1">Favoritos</Nav.Link>
                   <Nav.Link href="#action1">Tipos</Nav.Link>
@@ -80,7 +80,7 @@ function Header(props) {
                 <Form className="d-flex" onSubmit={handleSearchCity}>
                   <FormControl
                     type="search"
-                    placeholder="Buscar pais..."
+                    placeholder="Busque una ciudad..."
 
                     className="me-2"
                     aria-label="Search"
