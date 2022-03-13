@@ -80,7 +80,7 @@ function Header(props) {
                 <Form className="d-flex" onSubmit={handleSearchCity}>
                   <FormControl
                     type="search"
-                    placeholder="Buscar pais..."
+                    placeholder="Busque una ciudad..."
 
                     className="me-2"
                     aria-label="Search"
