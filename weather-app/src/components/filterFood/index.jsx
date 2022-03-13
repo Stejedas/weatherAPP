@@ -65,12 +65,17 @@ function FoodCard(props) {
 
 
 
+
             {props.infoDays?.[0]?.weather[0].main? writeCardFood(props.infoDays?.[0]?.weather[0].main) :  <Card style={{ width: '326px', height: '261px' }}></Card>}
+
+
+
 
 
 
 
         </React.Fragment>
     )
+
 }
 export default FoodCard;

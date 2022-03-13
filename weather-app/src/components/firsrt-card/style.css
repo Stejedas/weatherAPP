@@ -2,15 +2,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
+}
+p{
+    margin: 0;
+}
+blocklquote{
+    margin:0;
+}
 
 .iconActual{
-    font-size: 80px;
+    font-size: 90px;
    
-
-
-
-
+    display: flex;
+    align-items: center;
 
     
 }
@@ -20,6 +24,40 @@
     background: transparent;
     cursor:none;
 
+}
+.inform{
+    font-size: 15px;
+    
+    
+}
+.meteo{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meteo2{
+    text-align: center;
+   
+    width: 60%;
+    
+    font-size: 20px;
+}
 
+.hola{
+    align-items: center;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+.temperatura{
+    font-weight: bold;
+    font-size: 80px;
 
 }
+.p-1 mb-1 bg-white rounded{
+
+}
+
+
+
