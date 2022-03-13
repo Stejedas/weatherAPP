@@ -5,6 +5,7 @@ import {IoIosSnow} from 'react-icons/io'
 import Form from 'react-bootstrap/Form'
 import './style.css'
 import { Stack } from "react-bootstrap";
+import Container from 'react-bootstrap/Container'
 
 
 
@@ -12,7 +13,6 @@ import { Stack } from "react-bootstrap";
 
 function FirstCard(props) {
   // console.log(props);
-
 
   function PrintWeather(typeWeahter) {
     switch (typeWeahter) {
@@ -38,21 +38,19 @@ function FirstCard(props) {
         return WiThunderstorm();
         break;
       case "Snow":
-        return IoIosSnow  ();
+        return IoIosSnow();
         break;
       case "Mist":
         return WiWindy();
         break;
       case "Clouds":
-          return WiCloud();
-          break;
+        return WiCloud();
+        break;
       case "Clear":
-            return WiSunrise();
-            break;
-
+        return WiSunrise();
+        break;
     }
   }
-  
 
   const hadleChangeMethod = (e) => {
     if (props.upload.unitUse !== "imperial") {
@@ -65,27 +63,35 @@ function FirstCard(props) {
   // console.log(props);
   return (
     <Col xl={3}>
-      <Card className="p-3 mb-4 bg-white rounded" style={{ width: '326px', height: '231px'}} >
+      <Card
+        className="p-1 mb-1 bg-white rounded-3 "
+        style={{ width: "326px", height: "261px" }}
+      >
         <Card.Body>
-          <Card.Title className="fs-5">Tiempo ahora</Card.Title>
+
+          <Card.Title><p>Madrid</p></Card.Title>
+
+          <p className="inform">EL TIEMPO AHORA</p>
+
+          {/* icono y temperatura local */}
+
+          <Stack direction="horizontal"className="meteo">
+            <div className="iconActual text-center">{PrintWeather(props.infoDays?.[0]?.weather[0].main)}</div>
+            <div className="temperatura">{`${parseInt(props.infoDays?.[0]?.temp.day)} º`}</div>
+          </Stack>
+
+          {/* estado del tiempo en texto */}
+          <Container direction="horizontal"className="hola">
+
+          <Stack><Card.Subtitle className="meteo2"><a>{`${props.infoDays?.[0]?.weather[0].main}`}</a></Card.Subtitle> </Stack>
+   
           <Stack direction="horizontal">
-          <Card.Text className="iconActual">
-              {PrintWeather(props.infoDays?.[0]?.weather[0].main)}
-            </Card.Text>
-            <Card.Subtitle className="mb-2 fs-1">
-              {`${parseInt(props.infoDays?.[0]?.temp.day)} º`}
-            </Card.Subtitle>
-          </Stack>
-          <Stack direction="horizontal" className="d-flex justify-content-between" gap="5">
-            <Card.Subtitle className="fs-5 pb-4">
-              {`${props.infoDays?.[0]?.weather[0].main}`}
-            </Card.Subtitle>
-            <Button className="btn__f" onClick={hadleChangeMethod}>
-            <Stack direction="horizontal" >
-              <p className='cambiante'>ºF </p><p> / </p><p className="cambiante"> ºC</p>
-              </Stack>
-            </Button>
-          </Stack>
+            <Button className="btn__f" onClick={hadleChangeMethod}></Button>
+            <p className="cambiante"> C </p><p> / </p><p className="cambiante"> ºF</p>
+            </Stack>
+   
+          </Container>
+
         </Card.Body>
       </Card>
     </Col>

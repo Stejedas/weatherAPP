@@ -46,24 +46,24 @@ function FoodCard(props) {
         
     }
 
-    updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'))
-    console.log (foodFiltered)
-    console.log(`${props.infoDays?.[0]?.weather[0].main}`)
+//     updateFoodFiltered(food.filter(i => i.suggestedWeather === 'clear'))
+//     console.log (foodFiltered)
+//     console.log(`${props.infoDays?.[0]?.weather[0].main}`)
     
-    updateFoodRandom(Math.floor(Math.random()*foodFiltered.length))
+//     updateFoodRandom(Math.floor(Math.random()*foodFiltered.length))
 
-   filterFoods(props.infoDays?.[0]?.weather[0].main)
+//    filterFoods(props.infoDays?.[0]?.weather[0].main)
     
 
     return (<Col xl={4}>
 
         <Card style={{ width: '326px', height: '261px'}}>
-            <Card.Body >
+            {/* <Card.Body >
                 <Card.Img variant="top " style={{ width: '326px', height: '194px'}} class="img-fluid" src={foodFiltered[FoodRandom].img} />
                 <Card.Title className="fs-6">{foodFiltered[FoodRandom].name}</Card.Title>
 
 
-            </Card.Body>
+            </Card.Body> */}
         </Card>
     </Col>)
 }
