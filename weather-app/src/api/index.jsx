@@ -1,11 +1,13 @@
 import { useContext } from 'react';
+import { apikey } from '../api-key/key.js';
+
 
 
 
 export const getLatAndLonFromCity = async (citySearch) => {
     
 
-    let key = '';
+    let key = apikey;
 
    
 
@@ -19,7 +21,7 @@ export const getWeatherByLocation = async (lat, lon, unit) => {
 
 
 
-     let key = 'd'; 
+     let key = apikey; 
 
 
 
