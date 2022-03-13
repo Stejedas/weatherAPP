@@ -1,10 +1,10 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-
+import './style.css'
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/form";
 import Button from "react-bootstrap/Button";
-import headerfoto from '../../assets/img/headerfoto.jpg'
+import recortada from '../../assets/recortada.jpg'
 
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
@@ -61,13 +61,13 @@ function Header(props) {
   
     return (
       <React.Fragment>
-              <Container fluid>
-        <img src={headerfoto} className="img-fluid" alt="..."></img>
+        <Container fluid>
+        <img src={recortada} style={{ width: '100%'}} className='positionImgHeader' alt="..."></img>
         </Container>
         <Container>
         <Row>
-          <Col xl={12}>
-            <Navbar bg="light" expand="lg">
+          <Col xl={12} className='d-flex justify-content-center'>
+            <Navbar bg="light" expand="lg" style={{ width: '1006px', height:'56px'}}>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav

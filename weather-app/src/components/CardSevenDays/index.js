@@ -1,6 +1,6 @@
 import { Container, Row, Col, Stack, Card } from 'react-bootstrap'
 import { WiDaySunny, WiDayCloudy, WiCloud, WiCloudy, WiRainMix, WiNightSleet, WiStormShowers, WiSnowflakeCold, WiWindy } from 'react-icons/wi'
-
+import './style.css'
 
 function CardSevenDays(laterDays) {
 
@@ -53,20 +53,20 @@ function CardSevenDays(laterDays) {
     return (
         <Container>
             <Row>
-                <Col xs={12} > // COMIENZA LAS CARD DIAS POSTERIORES
+                <Col xs={12} > 
                     <Stack direction="horizontal" className="d-flex justify-content-between" >
                     {laterDays.infoDays?.map((c, i) => {
                             if (i != 0) {
                                 return (
-                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadowCards '>
+                                    <Card key={c.dt} style={{ width: '115px', height: '160px'}} className='shadowCards p-2'>
 
-                                        <Card.Title className="title" style={{ width: '115px'}}>
+                                        <Card.Title className="titleSevenCards text-center" style={{ width: '100%'}}>
                                             {WriteDay(c.dt)}
                                         </Card.Title>
-                                        <div className="line"></div>
-                                        <Card.Text className="icon" style={{ width: '115px'}}>
+                                        <div className="border border-1 lineSevenCards" ></div>
+                                        <Card.Body className="iconSevenCards text-center p-0" style={{ width: '100%'}}>
                                             {PrintWeather(c.weather[0].main)}
-                                        </Card.Text>
+                                        </Card.Body>
 
                                     </Card>
                                 );
